@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ArticlesList from "./pages/ArticlesList";
+import ArticlePage from "./pages/ArticlePage";
 import './App.css';
 
 function App() {
@@ -8,6 +11,9 @@ function App() {
     <Router>
       <div className="App">
         <Route exact path="/" component={HomePage} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/articles-list" component={ArticlesList} />
+        <Route path="/article" component={ArticlePage} />
       </div>
     </Router>
   );
