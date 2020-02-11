@@ -5,6 +5,8 @@ const ArticlePage = ({ match }) => {
   const name = match.params.name;
   const article = articleContent.find(article => article.name === name);
 
+  if (!article) return <h1>No such article exists</h1>
+
   return (
     <>
       <h1>{article.title}</h1>
