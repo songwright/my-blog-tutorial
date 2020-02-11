@@ -16,6 +16,7 @@ const ArticlePage = ({ match }) => {
       {article.content.map((paragraph, key) => (
         <p key={key}>{paragraph}</p>
       ))}
+      <h3>Other Articles:</h3>
       <ArticlesList articles={otherArticles} />
     </>
   );
