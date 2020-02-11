@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ArticlesListPage from "./pages/ArticlesListPage";
@@ -13,11 +13,14 @@ function App() {
     <Router>
       <NavBar />
       <div className="App" id="page-body">
-        <Route exact path="/" component={HomePage} />
-        <Route path="/about" component={AboutPage} />
-        <Route path="/articles-list" component={ArticlesListPage} />
-        <Route path="/article/:name" component={ArticlePage} />
-        <Route component={NotFoundPage} />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/about" component={AboutPage} />
+          <Route path="/articles-list" component={ArticlesListPage} />
+          <Route path="/article/:name" component={ArticlePage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+        
       </div>
     </Router>
   );
