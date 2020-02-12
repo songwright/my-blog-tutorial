@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ArticlesList from "../components/ArticlesList";
 import NotFoundPage from "../pages/NotFoundPage";
 import articleContent from './article-content';
@@ -6,6 +6,11 @@ import articleContent from './article-content';
 const ArticlePage = ({ match }) => {
   const name = match.params.name;
   const article = articleContent.find(article => article.name === name);
+
+  const [articleInfo, setArticleInfo] = useState({
+    upvotes: 0,
+    comments: []
+  });
 
   if (!article) return <NotFoundPage />
 
