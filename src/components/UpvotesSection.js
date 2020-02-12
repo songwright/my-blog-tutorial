@@ -1,7 +1,7 @@
 import React from 'react';
 
-const UpvotesSection = () => {
-  const upvoteArticle = async ({ articleName, upvotes, setArticleInfo}) => {
+const UpvotesSection = ({ articleName, upvotes, setArticleInfo}) => {
+  const upvoteArticle = async () => {
     const result = await fetch(`/api/articles/${articleName}/upvote`, {
       method: 'post'
     });
