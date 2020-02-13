@@ -24,7 +24,7 @@ const AddCommentForm = ({ articleName, setArticleInfo }) => {
       </label>
       <label>
         Comment:
-        <textarea cols="50" rows="4" value={commentText} onChange={(event) => setCommentText(event.target.value)} ></textarea>
+        <textarea cols="50" rows="4" value={commentText} onChange={(event) => setCommentText(event.target.value)} />
       </label>
       <button onClick={() => addComment()}>Add Comment</button>
     </div>
